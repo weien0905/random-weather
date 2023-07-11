@@ -574,6 +574,7 @@ void loop() {
 }
 
 // Code from https://randomnerdtutorials.com/esp8266-nodemcu-https-requests/#esp8266-https-requests-no-certificate
+// HTTPS request is made without verifying certificate. To verify certificate, kindly refer to website above.
 String httpsGETRequest(const char* serverName) {
   std::unique_ptr<BearSSL::WiFiClientSecure>client(new BearSSL::WiFiClientSecure);
 
