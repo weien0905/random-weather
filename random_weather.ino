@@ -4,6 +4,7 @@
  https://www.youtube.com/watch?v=_L28Y0UNH-4
  https://arduinojson.org/
  https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/
+ https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/
  */
 
 #include <ESP8266WiFi.h>
@@ -12,6 +13,9 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <ArduinoJson.h>
+#include <DNSServer.h>
+#include <WiFiManager.h>
+#include <ESP8266WebServer.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -23,10 +27,6 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 #define LOGO_HEIGHT   16
 #define LOGO_WIDTH    16
-
-// Edit your WiFi SSID, WiFi password here
-const char* ssid = "SSID";
-const char* password = "PASSWORD";
 
 // Edit API call interval here (optional)
 unsigned long interval = 30 * 1000; // in milliseconds; Set interval to 30 seconds
@@ -392,14 +392,11 @@ void setup() {
     for(;;); // Don't proceed, loop forever
   }
 
-  WiFi.begin(ssid, password);
-
   Serial.println(F("Connecting to WiFi"));
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500); // Continue loop until connected
-    Serial.print(F("."));
-  }
+  // Connect to WiFi using WiFiManager
+  WiFiManager wifiManager;
+  wifiManager.autoConnect("RandomWeatherESP8266");
 
   Serial.println(F("Connected!"));
 }

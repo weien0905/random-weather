@@ -19,14 +19,7 @@ This is a random weather generator to display weather information of a random lo
 - Adafruit SSD1306 (2.5.7)
 - ArduinoJson (6.21.2)
 
-### 2. Edit your WiFi SSID and password in [random_weather.ino](random_weather.ino).
-```cpp
-// Edit your WiFi SSID, WiFi password here
-const char* ssid = "SSID";
-const char* password = "PASSWORD";
-```
-
-### 3. Ensure I2C address and pin configuration is correct.
+### 2. Ensure I2C address and pin configuration is correct.
 
 ```cpp
 #define SCREEN_ADDRESS 0x3C // See datasheet for Address (Try 0X3D if failure)
@@ -36,9 +29,9 @@ const char* password = "PASSWORD";
 Wire.begin(0, 2); // Edit this line if not using ESP-01
 ```
 
-### 4. Upload [random_weather.ino](random_weather.ino) using Arduino IDE.
+### 3. Upload [random_weather.ino](random_weather.ino) using Arduino IDE.
 
-### 5. Connect SSD1306 OLED display with ESP-01S and power supply.
+### 4. Connect SSD1306 OLED display with ESP-01S and power supply.
 
 - SSD1306 GND to GND
 - SSD1306 VCC to 3.3V
@@ -47,7 +40,9 @@ Wire.begin(0, 2); // Edit this line if not using ESP-01
 - ESP-01S VCC to 3.3V
 - ESP-01S GND to GND
 
-I2C protocol is used for communication. Refer to [here](#hardware) for hardware details.
+I2C protocol is used for communication. Refer to [here](#components) for components details.
+
+### 5. Connect "RandomWeatherESP8266" in WiFi network by using your mobile or desktop device. Click "Configure WiFi" in the browser and enter your WiFi SSID and password.
 
 ## APIs
 
@@ -71,7 +66,7 @@ According to [website](https://open-meteo.com/en/pricing), only 10,000 requests 
 - [Docs](https://open-meteo.com/en/docs)
 - [API Example](https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&timezone=auto)
 
-## Hardware
+## Components
 
 - [ESP-01S](https://shopee.com.my/ESP-01S-ESP8266-serial-WIFI-Wireless-Transceiver-Modele-(ESP-01-Updated-version)-i.110910897.6806457597)
 - [SSD1306 OLED Display](https://shopee.com.my/0.96-inch-IIC-SPI-Serial-7-4Pin-White-Blue-Yellow-Blue-OLED-Display-Module-SSD1306-12864-LCD-Screen-Board-for-Arduino-i.110910897.17049283569)
@@ -87,3 +82,4 @@ Cost: Less than RM20 (~$4.25 USD)
  - [https://www.youtube.com/watch?v=_L28Y0UNH-4]( https://www.youtube.com/watch?v=_L28Y0UNH-4)
  - [https://arduinojson.org/]( https://arduinojson.org/)
  - [https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/]( https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/)
+ - [https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/](https://randomnerdtutorials.com/wifimanager-with-esp8266-autoconnect-custom-parameter-and-manage-your-ssid-and-password/)
