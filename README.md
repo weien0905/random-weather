@@ -48,7 +48,7 @@ I2C protocol is used for communication. Refer to [here](#components) for compone
 
 Two APIs are used to fetch random location and weather details. No API key is required for both APIs.
 
-HTTPS request is made without verifying certificate. To verify certificate, kindly refer to [https://randomnerdtutorials.com/esp8266-nodemcu-https-requests](https://randomnerdtutorials.com/esp8266-nodemcu-https-requests).
+HTTPS request is made without verifying certificate as no sensitive information is involved in this project. However, to verify certificate, kindly refer to [https://randomnerdtutorials.com/esp8266-nodemcu-https-requests](https://randomnerdtutorials.com/esp8266-nodemcu-https-requests).
 
 ### 1. 3GeoNames.org
 
